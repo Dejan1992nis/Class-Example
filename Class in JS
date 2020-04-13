@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vebza I</title>
+</head>
+<body>
+	<div id="wrapp"></div>
+
+	<script>
+
+		
+
+		'use strict'
+
+		var allTanks = [];
+
+		class HumanArmy {
+			constructor (name){
+				this.name = name; 
+				
+			}
+		}
+
+		class Tanks extends HumanArmy {
+			constructor (name){
+			 	super(name);
+				this.damage = Math.floor(Math.random()*(100-80)+80);
+			}
+
+		}
+
+		class Soldiers extends HumanArmy {
+			constructor (name){
+			 	super(name);
+				this.damage = Math.floor(Math.random()*(20-10)+10);
+			}
+		} 
+
+function createSoldiers() {
+	for(let i = 1; i<10; i++){
+		let tenkisti = new Tanks(`Tank_${i}`);
+		allTanks.push(tenkisti);
+	}
+}
+	createSoldiers();
+	console.log(allTanks);
+
+		
+	</script>
+	
+</body>
+</html>
